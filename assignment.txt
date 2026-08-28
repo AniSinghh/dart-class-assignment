@@ -1,0 +1,617 @@
+1. Hello World
+
+void main() {
+  print("Hello, World!");
+}
+
+2. Add Two Numbers
+
+import 'dart:io';
+
+void main() {
+  int a = int.parse(stdin.readLineSync()!);
+  int b = int.parse(stdin.readLineSync()!);
+  print(a + b);
+}
+
+3. Swap Two Numbers
+
+import 'dart:io';
+
+void main() {
+  int a = int.parse(stdin.readLineSync()!);
+  int b = int.parse(stdin.readLineSync()!);
+
+  int temp = a;
+  a = b;
+  b = temp;
+
+  print("a = $a");
+  print("b = $b");
+}
+
+4. Even or Odd
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+
+  if (n % 2 == 0) {
+    print("Even");
+  } else {
+    print("Odd");
+  }
+}
+
+5. Largest Among Three Numbers
+
+import 'dart:io';
+
+void main() {
+  int a = int.parse(stdin.readLineSync()!);
+  int b = int.parse(stdin.readLineSync()!);
+  int c = int.parse(stdin.readLineSync()!);
+
+  if (a >= b && a >= c) {
+    print(a);
+  } else if (b >= a && b >= c) {
+    print(b);
+  } else {
+    print(c);
+  }
+}
+
+6. Leap Year
+
+import 'dart:io';
+
+void main() {
+  int year = int.parse(stdin.readLineSync()!);
+
+  if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+    print("Leap Year");
+  } else {
+    print("Not a Leap Year");
+  }
+}
+
+7. Factorial
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  int fact = 1;
+
+  for (int i = 1; i <= n; i++) {
+    fact *= i;
+  }
+
+  print(fact);
+}
+
+8. Prime Number
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  bool prime = true;
+
+  if (n < 2) {
+    prime = false;
+  } else {
+    for (int i = 2; i <= n ~/ 2; i++) {
+      if (n % i == 0) {
+        prime = false;
+        break;
+      }
+    }
+  }
+
+  print(prime ? "Prime" : "Not Prime");
+}
+
+9. Fibonacci Series
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  int a = 0;
+  int b = 1;
+
+  for (int i = 0; i < n; i++) {
+    print(a);
+    int c = a + b;
+    a = b;
+    b = c;
+  }
+}
+
+10. Reverse a Number
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  int reverse = 0;
+
+  while (n != 0) {
+    int digit = n % 10;
+    reverse = reverse * 10 + digit;
+    n ~/= 10;
+  }
+
+  print(reverse);
+}
+
+11. Number Palindrome
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  int original = n;
+  int reverse = 0;
+
+  while (n != 0) {
+    int digit = n % 10;
+    reverse = reverse * 10 + digit;
+    n ~/= 10;
+  }
+
+  print(original == reverse ? "Palindrome" : "Not Palindrome");
+}
+
+12. Sum of Digits
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  int sum = 0;
+
+  while (n != 0) {
+    sum += n % 10;
+    n ~/= 10;
+  }
+
+  print(sum);
+}
+
+13. Multiplication Table
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+
+  for (int i = 1; i <= 10; i++) {
+    print("$n x $i = ${n * i}");
+  }
+}
+
+14. Power of a Number
+
+import 'dart:io';
+
+void main() {
+  int base = int.parse(stdin.readLineSync()!);
+  int exponent = int.parse(stdin.readLineSync()!);
+  int result = 1;
+
+  for (int i = 1; i <= exponent; i++) {
+    result *= base;
+  }
+
+  print(result);
+}
+
+15. Armstrong Number
+
+import 'dart:io';
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  int original = n;
+  int temp = n;
+  int digits = n.toString().length;
+  int sum = 0;
+
+  while (temp != 0) {
+    int digit = temp % 10;
+    int power = 1;
+
+    for (int i = 0; i < digits; i++) {
+      power *= digit;
+    }
+
+    sum += power;
+    temp ~/= 10;
+  }
+
+  print(sum == original ? "Armstrong Number" : "Not Armstrong Number");
+}
+
+String Programs
+
+16. Reverse a String
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!;
+  String reverse = "";
+
+  for (int i = str.length - 1; i >= 0; i--) {
+    reverse += str[i];
+  }
+
+  print(reverse);
+}
+
+17. String Palindrome
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!;
+  String reverse = "";
+
+  for (int i = str.length - 1; i >= 0; i--) {
+    reverse += str[i];
+  }
+
+  print(str == reverse ? "Palindrome" : "Not Palindrome");
+}
+
+18. Count Vowels and Consonants
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!.toLowerCase();
+  int vowels = 0;
+  int consonants = 0;
+
+  for (int i = 0; i < str.length; i++) {
+    String ch = str[i];
+
+    if ("aeiou".contains(ch)) {
+      vowels++;
+    } else if (ch.codeUnitAt(0) >= 97 && ch.codeUnitAt(0) <= 122) {
+      consonants++;
+    }
+  }
+
+  print("Vowels: $vowels");
+  print("Consonants: $consonants");
+}
+
+19. Count Words in a Sentence
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!.trim();
+
+  if (str.isEmpty) {
+    print(0);
+  } else {
+    print(str.split(RegExp(r'\s+')).length);
+  }
+}
+
+20. Frequency of Each Character
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!;
+  Map<String, int> frequency = {};
+
+  for (int i = 0; i < str.length; i++) {
+    String ch = str[i];
+    frequency[ch] = (frequency[ch] ?? 0) + 1;
+  }
+
+  frequency.forEach((key, value) {
+    print("$key: $value");
+  });
+}
+
+21. Uppercase and Lowercase
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!;
+
+  print(str.toUpperCase());
+  print(str.toLowerCase());
+}
+
+22. Remove Spaces
+
+import 'dart:io';
+
+void main() {
+  String str = stdin.readLineSync()!;
+  print(str.replaceAll(" ", ""));
+}
+
+List Programs
+
+23. Largest Element
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  int largest = list[0];
+
+  for (int i = 1; i < list.length; i++) {
+    if (list[i] > largest) {
+      largest = list[i];
+    }
+  }
+
+  print(largest);
+}
+
+24. Smallest Element
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  int smallest = list[0];
+
+  for (int i = 1; i < list.length; i++) {
+    if (list[i] < smallest) {
+      smallest = list[i];
+    }
+  }
+
+  print(smallest);
+}
+
+25. Sum and Average
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  int sum = 0;
+
+  for (int n in list) {
+    sum += n;
+  }
+
+  double average = sum / list.length;
+
+  print("Sum: $sum");
+  print("Average: $average");
+}
+
+26. Sort Ascending
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  for (int i = 0; i < list.length - 1; i++) {
+    for (int j = 0; j < list.length - i - 1; j++) {
+      if (list[j] > list[j + 1]) {
+        int temp = list[j];
+        list[j] = list[j + 1];
+        list[j + 1] = temp;
+      }
+    }
+  }
+
+  print(list);
+}
+
+27. Sort Descending
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  for (int i = 0; i < list.length - 1; i++) {
+    for (int j = 0; j < list.length - i - 1; j++) {
+      if (list[j] < list[j + 1]) {
+        int temp = list[j];
+        list[j] = list[j + 1];
+        list[j + 1] = temp;
+      }
+    }
+  }
+
+  print(list);
+}
+
+28. Remove Duplicates
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  List<int> result = [];
+
+  for (int n in list) {
+    if (!result.contains(n)) {
+      result.add(n);
+    }
+  }
+
+  print(result);
+}
+
+29. Second Largest Element
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  list.sort();
+
+  int largest = list[list.length - 1];
+  int secondLargest = -999999999;
+
+  for (int i = list.length - 2; i >= 0; i--) {
+    if (list[i] != largest) {
+      secondLargest = list[i];
+      break;
+    }
+  }
+
+  if (secondLargest == -999999999) {
+    print("No second largest element");
+  } else {
+    print(secondLargest);
+  }
+}
+
+30. Search Element in List
+
+import 'dart:io';
+
+void main() {
+  List<int> list = stdin.readLineSync()!
+      .split(" ")
+      .map(int.parse)
+      .toList();
+
+  int search = int.parse(stdin.readLineSync()!);
+  bool found = false;
+
+  for (int n in list) {
+    if (n == search) {
+      found = true;
+      break;
+    }
+  }
+
+  print(found ? "Element Found" : "Element Not Found");
+}
+
+Function Programs
+
+31. Function to Calculate Factorial
+
+import 'dart:io';
+
+int factorial(int n) {
+  int fact = 1;
+
+  for (int i = 1; i <= n; i++) {
+    fact *= i;
+  }
+
+  return fact;
+}
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  print(factorial(n));
+}
+
+32. Function to Check Prime
+
+import 'dart:io';
+
+bool isPrime(int n) {
+  if (n < 2) {
+    return false;
+  }
+
+  for (int i = 2; i <= n ~/ 2; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  print(isPrime(n) ? "Prime" : "Not Prime");
+}
+
+33. Function to Find Maximum of Two Numbers
+
+import 'dart:io';
+
+int maximum(int a, int b) {
+  return a > b ? a : b;
+}
+
+void main() {
+  int a = int.parse(stdin.readLineSync()!);
+  int b = int.parse(stdin.readLineSync()!);
+
+  print(maximum(a, b));
+}
+
+34. Recursive Factorial
+
+import 'dart:io';
+
+int factorial(int n) {
+  if (n <= 1) {
+    return 1;
+  }
+
+  return n * factorial(n - 1);
+}
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  print(factorial(n));
+}
+
+35. Function to Return Square
+
+import 'dart:io';
+
+int square(int n) {
+  return n * n;
+}
+
+void main() {
+  int n = int.parse(stdin.readLineSync()!);
+  print(square(n));
+}
